@@ -1,0 +1,181 @@
+:root {
+  --sgk-container: 1200px;
+  --sgk-pad: 72px;
+  --sgk-pad-sm: 48px;
+  --sgk-gap: 24px;
+  --sgk-radius: 14px;
+  --sgk-border: #e5e7eb;
+  --sgk-muted: #64748b;
+  --sgk-bg-soft: #f6f7fb;
+}
+
+.sec-hero,
+.sec-intro,
+.sec-how,
+.sec-top,
+.sec-deposit,
+.sec-withdraw,
+.sec-proscons,
+.sec-alternatives,
+.sec-safety,
+.sec-trust,
+.sec-faq,
+.sec-methodology,
+.sec-quickfacts,
+.sec-termslimits {
+  padding: var(--sgk-pad) 0;
+}
+
+.sec-hero .wp-block-group__inner-container,
+.sec-intro .wp-block-group__inner-container,
+.sec-how .wp-block-group__inner-container,
+.sec-top .wp-block-group__inner-container,
+.sec-deposit .wp-block-group__inner-container,
+.sec-withdraw .wp-block-group__inner-container,
+.sec-proscons .wp-block-group__inner-container,
+.sec-alternatives .wp-block-group__inner-container,
+.sec-safety .wp-block-group__inner-container,
+.sec-trust .wp-block-group__inner-container,
+.sec-faq .wp-block-group__inner-container,
+.sec-methodology .wp-block-group__inner-container,
+.sec-quickfacts .wp-block-group__inner-container,
+.sec-termslimits .wp-block-group__inner-container {
+  max-width: var(--sgk-container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.sec-variant-a {
+  background: #ffffff;
+}
+
+.sec-variant-b {
+  background: var(--sgk-bg-soft);
+}
+
+.sec-variant-c {
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+.sec-variant-c a {
+  color: #e2e8f0;
+}
+
+.sec-variant-c .wp-block-button__link {
+  border-color: #e2e8f0;
+}
+
+.wp-block-columns {
+  gap: var(--sgk-gap);
+}
+
+.wp-block-table {
+  overflow-x: auto;
+}
+
+.wp-block-table table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 560px;
+}
+
+.wp-block-table th,
+.wp-block-table td {
+  padding: 12px 14px;
+  border: 1px solid var(--sgk-border);
+  text-align: left;
+}
+
+.wp-block-table.is-style-sgk-table-a th {
+  background: #f1f5f9;
+}
+
+.wp-block-table.is-style-sgk-table-b tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.wp-block-table.is-style-sgk-table-b th {
+  background: #e2e8f0;
+}
+
+.wp-block-table.is-style-sgk-table-c table {
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.wp-block-table.is-style-sgk-table-c tbody tr {
+  background: #f8fafc;
+}
+
+.wp-block-table.is-style-sgk-table-c td:first-child,
+.wp-block-table.is-style-sgk-table-c th:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.wp-block-table.is-style-sgk-table-c td:last-child,
+.wp-block-table.is-style-sgk-table-c th:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.wp-block-group.is-style-sgk-card-a {
+  border: 1px solid var(--sgk-border);
+  border-radius: var(--sgk-radius);
+  padding: 24px;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+}
+
+.wp-block-group.is-style-sgk-card-b {
+  border-radius: var(--sgk-radius);
+  padding: 24px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+}
+
+.wp-block-button.is-style-sgk-btn-a .wp-block-button__link {
+  background: #2563eb;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 12px 20px;
+  border: 1px solid #2563eb;
+}
+
+.wp-block-button.is-style-sgk-btn-b .wp-block-button__link {
+  background: transparent;
+  color: #2563eb;
+  border-radius: 10px;
+  padding: 12px 20px;
+  border: 1px solid #2563eb;
+}
+
+.wp-block-button.is-style-sgk-btn-b .wp-block-button__link:hover,
+.wp-block-button.is-style-sgk-btn-a .wp-block-button__link:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 782px) {
+  .sec-hero,
+  .sec-intro,
+  .sec-how,
+  .sec-top,
+  .sec-deposit,
+  .sec-withdraw,
+  .sec-proscons,
+  .sec-alternatives,
+  .sec-safety,
+  .sec-trust,
+  .sec-faq,
+  .sec-methodology,
+  .sec-quickfacts,
+  .sec-termslimits {
+    padding: var(--sgk-pad-sm) 0;
+  }
+
+  .wp-block-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
