@@ -216,6 +216,94 @@ function sgk_get_visual_presets() {
 }
 ',
         ),
+        'limits-terms' => array(
+            'label' => __('Limits & terms: Checklist', 'starter-gutenberg-kit'),
+            'group' => 'limits',
+            'css' => '
+.limits-block {
+  margin-top: 56px;
+  display: grid;
+  gap: 16px;
+}
+
+.limits-block__head h2 {
+  margin: 0 0 12px;
+  font-size: clamp(1.7rem, 2.4vw, 2.1rem);
+}
+
+.limits-block__head p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.limits-block__label {
+  background: #f8fafc;
+  border-left: 3px solid var(--accent);
+  padding: 10px 14px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+.limits-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.limits-item {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #e4e7ec;
+  background: #ffffff;
+}
+
+.limits-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: #e0f2fe;
+  color: #0284c7;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  align-self: center;
+}
+
+.limits-item h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.limits-item p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.limits-block__tip {
+  background: #f8fafc;
+  border: 1px solid #e4e7ec;
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.limits-block__tip p {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .limits-list {
+    grid-template-columns: 1fr;
+  }
+}
+',
+        ),
         'proscons-cards' => array(
             'label' => __('Pros & Cons: Split cards', 'starter-gutenberg-kit'),
             'group' => 'proscons',
@@ -289,6 +377,7 @@ function sgk_get_visual_preset_groups() {
     return array(
         'tables' => __('Tables', 'starter-gutenberg-kit'),
         'altpayments' => __('Alternative payments', 'starter-gutenberg-kit'),
+        'limits' => __('Limits / Terms', 'starter-gutenberg-kit'),
         'proscons' => __('Pros / Cons', 'starter-gutenberg-kit'),
     );
 }

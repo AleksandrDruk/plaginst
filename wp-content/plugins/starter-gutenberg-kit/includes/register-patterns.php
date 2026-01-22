@@ -1302,28 +1302,79 @@ HTML;
         return <<<HTML
 <!-- wp:group {"className":"{$section_class}","layout":{"type":"constrained"}} -->
 <div class="wp-block-group {$section_class}">
-    <!-- wp:heading {"level":2} -->
-    <h2>{$safe_title}</h2>
-    <!-- /wp:heading -->
+    <!-- wp:html -->
+    <section class="limits-block">
+      <div class="limits-block__head">
+        <h2>Limits und Bedingungen bei der Banküberweisung im Casino</h2>
+        <p>
+          Für dich als Spieler heißt das: Limits und Bedingungen entscheiden, ob
+          die Banküberweisung als Zahlungsmethode zu deinem Spielstil passt. Nicht
+          der Ablauf ist kompliziert, sondern die Details dahinter: Mindest- und
+          Höchstbeträge, eine mögliche Gebühr und die Frage, wie ein Betrag eindeutig
+          zugeordnet wird. Wenn du das vorab prüfst, sparst du dir Verzögerungen und
+          unnötige Rückfragen.
+        </p>
+      </div>
 
-    <!-- wp:table {"className":"is-style-sgk-table-a"} -->
-    <figure class="wp-block-table is-style-sgk-table-a"><table>
-        <tbody>
-            <tr>
-                <td>Condition</td>
-                <td>Value</td>
-            </tr>
-            <tr>
-                <td>Condition</td>
-                <td>Value</td>
-            </tr>
-            <tr>
-                <td>Condition</td>
-                <td>Value</td>
-            </tr>
-        </tbody>
-    </table></figure>
-    <!-- /wp:table -->
+      <div class="limits-block__label">
+        Worauf ich bei den Konditionen besonders achte:
+      </div>
+
+      <ul class="limits-list">
+        <li class="limits-item">
+          <span class="limits-icon">✓</span>
+          <div>
+            <h3>Mindest- und Höchstbetrag</h3>
+            <p>Welche Grenzen gelten pro Transaktion und innerhalb eines Zeitraums?</p>
+          </div>
+        </li>
+        <li class="limits-item">
+          <span class="limits-icon">✓</span>
+          <div>
+            <h3>Zuordnung über Verwendungszweck</h3>
+            <p>Muss eine Referenz exakt übernommen werden, damit der Betrag richtig ankommt?</p>
+          </div>
+        </li>
+        <li class="limits-item">
+          <span class="limits-icon">✓</span>
+          <div>
+            <h3>Bearbeitungsfenster</h3>
+            <p>Gibt es Cut-off-Zeiten oder Banktage, die den Eingang beeinflussen?</p>
+          </div>
+        </li>
+        <li class="limits-item">
+          <span class="limits-icon">✓</span>
+          <div>
+            <h3>Kostenhinweise</h3>
+            <p>Wird transparent erklärt, ob Gebühren durch Bank oder Casino entstehen können?</p>
+          </div>
+        </li>
+        <li class="limits-item">
+          <span class="limits-icon">✓</span>
+          <div>
+            <h3>Verifizierung vor Auszahlung</h3>
+            <p>Welche Dokumente werden erwartet, bevor Auszahlungen freigegeben werden?</p>
+          </div>
+        </li>
+        <li class="limits-item">
+          <span class="limits-icon">✓</span>
+          <div>
+            <h3>Bonus-Regeln</h3>
+            <p>Gilt ein Bonus auch bei dieser Methode oder sind bestimmte Wege ausgeschlossen?</p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="limits-block__tip">
+        <p>
+          Mein Praxistipp: Lies die Bedingungen direkt in der Kasse und im
+          Hilfebereich, bevor du die erste Einzahlung startest. Wenn Limits,
+          Gebührenlogik und Zuordnung klar beschrieben sind, bleibt die
+          Banküberweisung planbar.
+        </p>
+      </div>
+    </section>
+    <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
 HTML;
