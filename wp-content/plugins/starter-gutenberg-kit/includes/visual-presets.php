@@ -123,6 +123,99 @@ function sgk_get_visual_presets() {
 }
 ',
         ),
+        'alt-payments' => array(
+            'label' => __('Alternative payments: Cards', 'starter-gutenberg-kit'),
+            'group' => 'altpayments',
+            'css' => '
+.alt-payments {
+  margin-top: 56px;
+  display: grid;
+  gap: 16px;
+}
+
+.alt-payments__head h2 {
+  margin: 0 0 12px;
+  font-size: clamp(1.7rem, 2.4vw, 2.1rem);
+}
+
+.alt-payments__head p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.alt-payments__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.alt-payment {
+  border: 1px solid #e4e7ec;
+  border-radius: 12px;
+  padding: 14px 16px;
+  background: #ffffff;
+  display: grid;
+  gap: 8px;
+}
+
+.alt-payment__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0f172a;
+}
+
+.alt-payment__icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  border: 1px solid #e4e7ec;
+  display: inline-grid;
+  place-items: center;
+  font-size: 0.9rem;
+  color: #475467;
+}
+
+.alt-payment__icon svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.alt-payment p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.alt-payments__tip {
+  background: #f8fafc;
+  border: 1px solid #e4e7ec;
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.alt-payments__tip p {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .alt-payments__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .alt-payments__list {
+    grid-template-columns: 1fr;
+  }
+}
+',
+        ),
         'proscons-cards' => array(
             'label' => __('Pros & Cons: Split cards', 'starter-gutenberg-kit'),
             'group' => 'proscons',
@@ -195,6 +288,7 @@ function sgk_get_visual_presets() {
 function sgk_get_visual_preset_groups() {
     return array(
         'tables' => __('Tables', 'starter-gutenberg-kit'),
+        'altpayments' => __('Alternative payments', 'starter-gutenberg-kit'),
         'proscons' => __('Pros / Cons', 'starter-gutenberg-kit'),
     );
 }

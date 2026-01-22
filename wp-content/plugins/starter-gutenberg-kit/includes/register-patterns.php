@@ -971,102 +971,111 @@ HTML;
         return <<<HTML
 <!-- wp:group {"className":"{$section_class}","layout":{"type":"constrained"}} -->
 <div class="wp-block-group {$section_class}">
-    <!-- wp:group {"className":"sgk-alt-payments","layout":{"type":"constrained"}} -->
-    <div class="wp-block-group sgk-alt-payments">
-        <!-- wp:group {"className":"sgk-alt-payments__head","layout":{"type":"constrained"}} -->
-        <div class="wp-block-group sgk-alt-payments__head">
-            <!-- wp:heading {"level":2} -->
-            <h2>{$safe_title}</h2>
-            <!-- /wp:heading -->
-            <!-- wp:paragraph -->
-            <p>Introduce why alternatives help and what to compare.</p>
-            <!-- /wp:paragraph -->
-        </div>
-        <!-- /wp:group -->
+    <!-- wp:html -->
+    <section class="alt-payments">
+      <div class="alt-payments__head">
+        <h2>Alternative Zahlungsmethoden zu Trustly</h2>
+        <p>
+          Für dich als Spieler ist es sinnvoll, Alternativen parat zu haben,
+          falls Trustly im casino nicht verfügbar ist oder du beim Zahlungsweg
+          lieber anders trennst. Entscheidend ist dabei weniger „was ist am
+          beliebtesten“, sondern welche Methode zu deinem Ziel passt:
+          schneller Start, klare Kontrolle, oder ein bewusst separiertes
+          Budget.
+        </p>
+      </div>
 
-        <!-- wp:group {"className":"sgk-alt-payments__list","layout":{"type":"constrained"}} -->
-        <div class="wp-block-group sgk-alt-payments__list">
-            <!-- wp:group {"className":"sgk-alt-payment","layout":{"type":"constrained"}} -->
-            <div class="wp-block-group sgk-alt-payment">
-                <!-- wp:group {"className":"sgk-alt-payment__badge","layout":{"type":"constrained"}} -->
-                <div class="wp-block-group sgk-alt-payment__badge">
-                    <!-- wp:html -->
-                    <span class="sgk-alt-payment__icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24">
-                            <rect x="3" y="6" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.6" />
-                            <path d="M7 10h10M7 14h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                        </svg>
-                    </span>
-                    <!-- /wp:html -->
-                    <!-- wp:paragraph -->
-                    <p>Visa</p>
-                    <!-- /wp:paragraph -->
-                </div>
-                <!-- /wp:group -->
-                <!-- wp:paragraph -->
-                <p>Short reason why this method is useful.</p>
-                <!-- /wp:paragraph -->
-            </div>
-            <!-- /wp:group -->
+      <div class="alt-payments__list">
+        <article class="alt-payment">
+          <div class="alt-payment__badge">
+            <span class="alt-payment__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="6" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.6" />
+                <path d="M7 10h10M7 14h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </span>
+            Visa
+          </div>
+          <p>meist gut verfügbar, aber Auszahlungen laufen nicht immer identisch zur Einzahlung</p>
+        </article>
 
-            <!-- wp:group {"className":"sgk-alt-payment","layout":{"type":"constrained"}} -->
-            <div class="wp-block-group sgk-alt-payment">
-                <!-- wp:group {"className":"sgk-alt-payment__badge","layout":{"type":"constrained"}} -->
-                <div class="wp-block-group sgk-alt-payment__badge">
-                    <!-- wp:html -->
-                    <span class="sgk-alt-payment__icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24">
-                            <rect x="3" y="6" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.6" />
-                            <rect x="6.5" y="8.5" width="3.5" height="3.5" fill="currentColor" />
-                            <path d="M12 12.5h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                        </svg>
-                    </span>
-                    <!-- /wp:html -->
-                    <!-- wp:paragraph -->
-                    <p>Mastercard</p>
-                    <!-- /wp:paragraph -->
-                </div>
-                <!-- /wp:group -->
-                <!-- wp:paragraph -->
-                <p>Short reason why this method is useful.</p>
-                <!-- /wp:paragraph -->
-            </div>
-            <!-- /wp:group -->
+        <article class="alt-payment">
+          <div class="alt-payment__badge">
+            <span class="alt-payment__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="6" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.6" />
+                <rect x="6.5" y="8.5" width="3.5" height="3.5" fill="currentColor" />
+                <path d="M12 12.5h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </span>
+            Mastercard
+          </div>
+          <p>ähnlich verbreitet, Bedingungen unterscheiden sich stark je Anbieter</p>
+        </article>
 
-            <!-- wp:group {"className":"sgk-alt-payment","layout":{"type":"constrained"}} -->
-            <div class="wp-block-group sgk-alt-payment">
-                <!-- wp:group {"className":"sgk-alt-payment__badge","layout":{"type":"constrained"}} -->
-                <div class="wp-block-group sgk-alt-payment__badge">
-                    <!-- wp:html -->
-                    <span class="sgk-alt-payment__icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 4a8 8 0 100 16 8 8 0 000-16z" fill="none" stroke="currentColor" stroke-width="1.6" />
-                            <path d="M12 8v4l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                        </svg>
-                    </span>
-                    <!-- /wp:html -->
-                    <!-- wp:paragraph -->
-                    <p>Skrill</p>
-                    <!-- /wp:paragraph -->
-                </div>
-                <!-- /wp:group -->
-                <!-- wp:paragraph -->
-                <p>Short reason why this method is useful.</p>
-                <!-- /wp:paragraph -->
-            </div>
-            <!-- /wp:group -->
-        </div>
-        <!-- /wp:group -->
+        <article class="alt-payment">
+          <div class="alt-payment__badge">
+            <span class="alt-payment__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 4a8 8 0 100 16 8 8 0 000-16z" fill="none" stroke="currentColor" stroke-width="1.6" />
+                <path d="M12 8v4l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </span>
+            Skrill
+          </div>
+          <p>separates Guthaben, oft praktisch für klare Budget-Kontrolle</p>
+        </article>
 
-        <!-- wp:group {"className":"sgk-alt-payments__tip","layout":{"type":"constrained"}} -->
-        <div class="wp-block-group sgk-alt-payments__tip">
-            <!-- wp:paragraph -->
-            <p>Add a short tip about choosing the right alternative.</p>
-            <!-- /wp:paragraph -->
-        </div>
-        <!-- /wp:group -->
-    </div>
-    <!-- /wp:group -->
+        <article class="alt-payment">
+          <div class="alt-payment__badge">
+            <span class="alt-payment__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M6 9a6 6 0 0112 0v6a3 3 0 01-3 3H9a3 3 0 01-3-3V9z" fill="none" stroke="currentColor" stroke-width="1.6" />
+                <path d="M9 12h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </span>
+            Neteller
+          </div>
+          <p>Wallet-Alternative mit Fokus auf schnelle interne Transfers</p>
+        </article>
+
+        <article class="alt-payment">
+          <div class="alt-payment__badge">
+            <span class="alt-payment__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="5" y="4" width="14" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.6" />
+                <path d="M8 9h8M8 13h5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </span>
+            Paysafecard
+          </div>
+          <p>gut, wenn du ohne Bankzugriff einzahlen willst; Auszahlungen brauchen meist einen anderen Weg</p>
+        </article>
+
+        <article class="alt-payment">
+          <div class="alt-payment__badge">
+            <span class="alt-payment__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="6" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.6" />
+                <path d="M7 10h10M7 14h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </span>
+            SEPA-Lastschrift
+          </div>
+          <p>planbar und vertraut, dafür oft prozesslastiger als Online Banking</p>
+        </article>
+      </div>
+
+      <div class="alt-payments__tip">
+        <p>
+          Wenn du die Optionen gegeneinander abwägst, achte immer darauf, dass
+          Einzahlung und Auszahlung für dich logisch zusammenpassen. So
+          vermeidest du Umwege, selbst wenn du Trustly gerade nicht nutzen
+          kannst.
+        </p>
+      </div>
+    </section>
+    <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
 HTML;
