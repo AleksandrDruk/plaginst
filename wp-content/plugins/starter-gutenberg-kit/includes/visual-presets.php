@@ -6,6 +6,123 @@ if (!defined('ABSPATH')) {
 
 function sgk_get_visual_presets() {
     return array(
+        'table-modern' => array(
+            'label' => __('Table: Modern comparison', 'starter-gutenberg-kit'),
+            'group' => 'tables',
+            'css' => '
+.table-wrap {
+  border-radius: 16px;
+  border: 1px solid #e4e7ec;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.97rem;
+}
+
+.comparison-table thead {
+  background: #f8fafc;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 16px 18px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid #e4e7ec;
+}
+
+.comparison-table th {
+  font-weight: 600;
+  color: #0f172a;
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.comparison-table th + th,
+.comparison-table td + td {
+  border-left: 1px solid #eef2f7;
+}
+
+.comparison-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+  background: #fbfdff;
+}
+
+.comparison-table td:first-child {
+  font-weight: 600;
+  color: #1f2937;
+  width: 160px;
+  background: #f8fafc;
+}
+
+.comparison-table tbody tr:hover td {
+  background: #f1f5ff;
+}
+
+@media (max-width: 720px) {
+  .table-wrap {
+    border-radius: 16px;
+    padding: 8px;
+    background: transparent;
+  }
+
+  .comparison-table,
+  .comparison-table thead,
+  .comparison-table tbody,
+  .comparison-table th,
+  .comparison-table td,
+  .comparison-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .comparison-table thead {
+    display: none;
+  }
+
+  .comparison-table tbody tr {
+    border: 1px solid #e4e7ec;
+    border-radius: 14px;
+    padding: 12px 14px;
+    background: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .comparison-table td {
+    border: none;
+    padding: 8px 0;
+  }
+
+  .comparison-table td:first-child {
+    width: auto;
+    background: #f8fafc;
+    font-weight: 700;
+    color: #0f172a;
+    padding: 8px 10px;
+    border-radius: 10px;
+  }
+
+  .comparison-table td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #98a2b3;
+    margin-bottom: 6px;
+  }
+}
+',
+        ),
         'proscons-cards' => array(
             'label' => __('Pros & Cons: Split cards', 'starter-gutenberg-kit'),
             'group' => 'proscons',
@@ -77,6 +194,7 @@ function sgk_get_visual_presets() {
 
 function sgk_get_visual_preset_groups() {
     return array(
+        'tables' => __('Tables', 'starter-gutenberg-kit'),
         'proscons' => __('Pros / Cons', 'starter-gutenberg-kit'),
     );
 }
@@ -96,16 +214,18 @@ function sgk_get_visual_presets_css() {
 }
 
 function sgk_add_visual_preset_class_to_block($block_content, $block) {
-    if (empty($block['blockName']) || $block['blockName'] !== 'core/group') {
+    if (empty($block['blockName'])) {
         return $block_content;
     }
-    if (!sgk_is_visual_preset_enabled('proscons-cards')) {
-        return $block_content;
+    if (sgk_is_visual_preset_enabled('table-modern')) {
+        $block_content = sgk_apply_table_preset($block_content);
     }
-    if (strpos($block_content, 'sgk-section-pros-cons') === false && strpos($block_content, 'pros-cons__tables') === false) {
-        return $block_content;
+    if ($block['blockName'] === 'core/group' && sgk_is_visual_preset_enabled('proscons-cards')) {
+        if (strpos($block_content, 'sgk-section-pros-cons') !== false || strpos($block_content, 'pros-cons__tables') !== false) {
+            $block_content = sgk_apply_proscons_preset($block_content);
+        }
     }
-    return sgk_apply_proscons_preset($block_content);
+    return $block_content;
 }
 
 function sgk_apply_proscons_preset($block_content) {
@@ -144,6 +264,31 @@ function sgk_apply_proscons_preset($block_content) {
         $block_content,
         1
     );
+
+    return $block_content;
+}
+
+function sgk_apply_table_preset($block_content) {
+    $block_content = preg_replace_callback('/<figure([^>]*)class="([^"]*)"/i', function ($matches) {
+        if (strpos($matches[2], 'wp-block-table') === false) {
+            return $matches[0];
+        }
+        if (strpos($matches[2], 'table-wrap') !== false) {
+            return $matches[0];
+        }
+        return '<figure' . $matches[1] . 'class="' . $matches[2] . ' table-wrap"';
+    }, $block_content);
+
+    $block_content = preg_replace_callback('/<table([^>]*)class="([^"]*)"/i', function ($matches) {
+        if (strpos($matches[2], 'comparison-table') !== false) {
+            return $matches[0];
+        }
+        return '<table' . $matches[1] . 'class="' . $matches[2] . ' comparison-table"';
+    }, $block_content);
+
+    $block_content = preg_replace_callback('/<table(?![^>]*class=)([^>]*)>/i', function ($matches) {
+        return '<table class="comparison-table"' . $matches[1] . '>';
+    }, $block_content);
 
     return $block_content;
 }

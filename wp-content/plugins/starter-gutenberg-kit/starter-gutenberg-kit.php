@@ -36,6 +36,7 @@ add_action('enqueue_block_editor_assets', 'sgk_enqueue_editor_assets');
 add_action('admin_menu', 'sgk_register_admin_menu');
 add_action('admin_enqueue_scripts', 'sgk_enqueue_admin_assets');
 add_filter('render_block', 'sgk_add_site_token_to_section', 10, 2);
+add_filter('render_block', 'sgk_add_visual_preset_class_to_block', 10, 2);
 
 add_filter('block_pattern_categories_all', 'sgk_filter_pattern_categories', 20, 1);
 add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'sgk_add_plugin_action_links');
@@ -55,4 +56,3 @@ function sgk_add_plugin_action_links($links) {
     array_unshift($links, $settings_link);
     return $links;
 }
-
